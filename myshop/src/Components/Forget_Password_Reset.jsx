@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
-import { Link,useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import pic from "../Asserts/images/forget.jpg"
 export default function Forget_Password_Reset() {
   var navigate= useNavigate()
   var [details,setdetails]=useState({
-    password:" ",
-    cpassword:" "
+    password:"",
+    cpassword:""
   })
 
   function getData(e){
@@ -25,10 +25,10 @@ export default function Forget_Password_Reset() {
     if(details.password == details.cpassword){
         var item= {
       password:details.password,
-      username:localStorage.getItem("ResetUSer")
+      username:localStorage.getItem("ResetUser")
     }
     console.log(item);
-    var rawdata= await fetch("/Forget-password-reset",{
+    var rawdata= await fetch("/forget-password-reset",{
       method:"post",
       headers:{
         "Content-Type":"application/json",
@@ -46,12 +46,13 @@ export default function Forget_Password_Reset() {
 }
   return (
     <>
-      <div className='row mt-5'>
-        <div className='col-md-6 col-sm-12 col-12'>
+      <div className='row mt-5 mb-2'>
+        <div className=' col-sm-4 col-12'>
           <img src={pic} alt="profile pic" height="300px" className="w-100"></img>
         </div>
-        <div className='col-md-6 col-sm-12 col-12'>
-        <h5 className='background text-center text-light w-100 p-2 border rounded-pill'>Forget Password Section</h5>
+        <div className=' col-sm-8 col-12'>
+       <div className='container-fluid'>
+       <h5 className='background text-center text-light w-100 p-2 border rounded-pill'>Forget Password Section</h5>
           <form>
            
             <div className="mb-3">
@@ -60,11 +61,12 @@ export default function Forget_Password_Reset() {
             </div>
             <div className="mb-3">
               <label   className="form-label">Confirm Password</label>
-              <input type="cpassword" className="form-control" required name="cpassword" onChange={getData}  placeholder='enter the confirm password'/>
+              <input type="password" className="form-control" required name="cpassword" onChange={getData}  placeholder='enter the confirm password'/>
             </div>
             <button type="submit" className="btn w-100 background text-light text-center border rounded-pill" onClick={postData}>submit</button>
             
           </form>
+       </div>
         </div>
       </div>
     </>

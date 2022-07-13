@@ -39,6 +39,7 @@ import Error from "./Error"
 import Forget_Password_Username from './Forget_Password_Username'
 import Forget_Password_OTP from './Forget_Password_OTP'
 import Forget_Password_Reset from './Forget_Password_Reset'
+import About from './About'
 
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
               <Route path='/cart' element={localStorage.getItem("role")=="Admin"? <Cpanal_index/>:<Cart/>}/>
               <Route path='/profile' element={localStorage.getItem("role")=="Admin"? <Cpanal_index/>:<Profile/>}/>
               <Route path='/login' element={<Login/>}/>
+              <Route path='/about' element={<About/>}/>
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/update-profile' element={localStorage.getItem("role")=="Admin"? <Cpanal_index/>:<Update_Profile/>}/>
               <Route path='/contact' element={<Contact/>}/>

@@ -64,7 +64,7 @@ export default function Navbar() {
                                 <Link className="nav-link active text-light" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link text-light" to="#">About</Link>
+                                <Link className="nav-link text-light" to="/about">About</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link text-light" to="/shop/All/All/All/None">Shop</Link>

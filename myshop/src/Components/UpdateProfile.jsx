@@ -78,7 +78,7 @@ export default function Update_Profile() {
     }
     return (
         <>
-            <div className='container-fluid mb-2'>
+            <div className='container-fluid mb-2 mt-5'>
                 <div className='row'>
                     <div className='col-sm-6 col-12'>
                         {register.pic ? <img src={"/public/media/images/" + register.pic} className="w-100"></img> : <img src={pic} className="w-100"></img>}
